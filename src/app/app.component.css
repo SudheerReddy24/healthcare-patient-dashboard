@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 280px;
+  gap: 24px;
+  padding: 16px;
+  background: #f6f7f8;
+  min-height: calc(100vh - 80px);
+}
+
+.patients-panel,
+.main-content,
+.profile-panel {
+  min-width: 0;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .dashboard {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+
+  .profile-panel {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .patients-panel,
+  .profile-panel {
+    display: none;
+  }
+
+  .main-content {
+    gap: 16px;
+  }
+}

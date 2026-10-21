@@ -1,0 +1,98 @@
+<div class="diagnosis-history">
+    <h2>Diagnosis History</h2>
+    <div class="diagnosis">
+        <div class="chart">
+            <div class="chart-content">
+                <div class="chart-header">
+                    <span class="chart-title">Blood Pressure</span>
+                    <div class="duration">
+                        <select [value]="selectedMonths" (change)="changePeriod(+$any($event.target).value)">
+                            <option value="3">Last 3 months</option>
+                            <option value="6">Last 6 months</option>
+                            <option value="12">Last 12 months</option>
+                        </select>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="10.646" height="6" viewBox="0 0 10.646 6"
+                            aria-hidden="true">
+                            <path
+                                d="M271.741-608.384a.958.958,0,0,1-.335-.057.827.827,0,0,1-.3-.2l-4.478-4.479a.722.722,0,0,1-.212-.52.7.7,0,0,1,.212-.53.715.715,0,0,1,.525-.217.715.715,0,0,1,.525.217l4.059,4.059,4.059-4.059a.722.722,0,0,1,.52-.212.7.7,0,0,1,.53.212.715.715,0,0,1,.217.525.715.715,0,0,1-.217.525l-4.478,4.479a.826.826,0,0,1-.3.2A.958.958,0,0,1,271.741-608.384Z"
+                                transform="translate(-266.42 614.384)" fill="#072635" />
+                        </svg> -->
+                    </div>
+                </div>
+                <div class="blood-pressure-chart">
+                    <canvas #bloodPressureChart></canvas>
+                </div>
+            </div>
+            <div class="systolic-values">
+                <div class="pressure-value">
+                    <div class="pressure-title">
+                        <span class="dot systolic-dot"></span>
+                        <span>Systolic</span>
+                    </div>
+                    <div class="value">
+                        {{patient?.diagnosis_history?.[0]?.blood_pressure?.systolic?.value}}
+                    </div>
+                    <div class="frequency">
+                        @if (patient?.diagnosis_history?.[0]?.blood_pressure?.systolic?.levels === 'Higher than Average') {
+                        <span class="arrow-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5.479" viewBox="0 0 10 5.479"
+                                aria-hidden="true">
+                                <path
+                                    d="M4.364,5.2.186,1.024A.673.673,0,0,1,.05.832.532.532,0,0,1,0,.6.606.606,0,0,1,.165.18.56.56,0,0,1,.6,0H9.4a.56.56,0,0,1,.434.181A.611.611,0,0,1,10,.6a1.85,1.85,0,0,1-.186.421L5.636,5.2a.962.962,0,0,1-.3.21.9.9,0,0,1-.677,0A.963.963,0,0,1,4.364,5.2Z"
+                                    transform="translate(10 5.479) rotate(180)" fill="#072635" />
+                            </svg>
+                        </span>
+                        }
+                        @if (patient?.diagnosis_history?.[0]?.blood_pressure?.systolic?.levels === 'Lower than Average') {
+                        <span class="arrow-down">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9.999" height="5.479"
+                                viewBox="0 0 9.999 5.479" aria-hidden="true">
+                                <path
+                                    d="M333.518-544.8l-4.177-4.178a.673.673,0,0,1-.136-.193.532.532,0,0,1-.05-.228.606.606,0,0,1,.165-.424.56.56,0,0,1,.434-.18h8.8a.56.56,0,0,1,.434.181.611.611,0,0,1,.165.423,1.85,1.85,0,0,1-.186.421l-4.177,4.177a.962.962,0,0,1-.3.21.851.851,0,0,1-.338.066.851.851,0,0,1-.339-.066A.963.963,0,0,1,333.518-544.8Z"
+                                    transform="translate(-329.155 549.999)" fill="#072635" />
+                            </svg>
+                        </span>
+                        }
+                        <span>{{ patient?.diagnosis_history?.[0]?.blood_pressure?.systolic?.levels }}</span>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="pressure-value">
+                    <div class="pressure-title">
+                        <span class="dot diastolic-dot"></span>
+                        <span>Diastolic</span>
+                    </div>
+                    <div class="value">
+                        {{patient?.diagnosis_history?.[0]?.blood_pressure?.diastolic?.value}}
+                    </div>
+                    <div class="frequency">
+                        @if (patient?.diagnosis_history?.[0]?.blood_pressure?.diastolic?.levels === 'Higher than Average') {
+                        <span class="arrow-up">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5.479" viewBox="0 0 10 5.479"
+                                aria-hidden="true">
+                                <path
+                                    d="M4.364,5.2.186,1.024A.673.673,0,0,1,.05.832.532.532,0,0,1,0,.6.606.606,0,0,1,.165.18.56.56,0,0,1,.6,0H9.4a.56.56,0,0,1,.434.181A.611.611,0,0,1,10,.6a1.85,1.85,0,0,1-.186.421L5.636,5.2a.962.962,0,0,1-.3.21.9.9,0,0,1-.677,0A.963.963,0,0,1,4.364,5.2Z"
+                                    transform="translate(10 5.479) rotate(180)" fill="#072635" />
+                            </svg>
+                        </span>
+                        }
+                        @if (patient?.diagnosis_history?.[0]?.blood_pressure?.diastolic?.levels === 'Lower than Average') {
+                        <span class="arrow-down">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9.999" height="5.479"
+                                viewBox="0 0 9.999 5.479" aria-hidden="true">
+                                <path
+                                    d="M333.518-544.8l-4.177-4.178a.673.673,0,0,1-.136-.193.532.532,0,0,1-.05-.228.606.606,0,0,1,.165-.424.56.56,0,0,1,.434-.18h8.8a.56.56,0,0,1,.434.181.611.611,0,0,1,.165.423,1.85,1.85,0,0,1-.186.421l-4.177,4.177a.962.962,0,0,1-.3.21.851.851,0,0,1-.338.066.851.851,0,0,1-.339-.066A.963.963,0,0,1,333.518-544.8Z"
+                                    transform="translate(-329.155 549.999)" fill="#072635" />
+                            </svg>
+                        </span>
+                        }
+                        <span>{{ patient?.diagnosis_history?.[0]?.blood_pressure?.diastolic?.levels }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vital">
+            <app-vital-cards></app-vital-cards>
+        </div>
+    </div>
+</div>

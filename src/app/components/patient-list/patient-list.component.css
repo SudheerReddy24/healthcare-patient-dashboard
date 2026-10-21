@@ -1,0 +1,91 @@
+.patient-list {
+    background: var(--unnamed-color-ffffff);
+    border-radius: 16px;
+    padding: 12px 3px;
+}
+
+.patent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 8px;
+}
+
+.patent h2 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.search {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.patient-list-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.patients {
+    overflow-y: auto;
+    height: 800px;
+}
+
+.patients::-webkit-scrollbar {
+    width: 6px;
+}
+
+.patients::-webkit-scrollbar-track {
+    background: #E3E4E6;
+    border-radius: 12px;
+}
+
+.patients::-webkit-scrollbar-thumb {
+  background: #072635;
+  border-radius: 12px;
+}
+
+.patient-card {
+    display: flex;
+}
+
+.patient-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.patient-data.selected {
+    background-color: var(--activestate_bg_2);
+}
+
+.patient-info {
+    margin-left: 10px;
+}
+
+.patient-name {
+    font-size: 14px;
+    color: #072635;
+}
+
+.patient-meta>span {
+    font-size: 14px;
+    color: #072635;
+}
+
+.patient-list img {
+    width: 48px;
+    height: 48px;
+}
+
+.more {
+    background: transparent 0% 0% no-repeat padding-box;
+    border: 0;
+    width: 18px;
+    height: 4px;
+    cursor: pointer;
+}
