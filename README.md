@@ -125,16 +125,6 @@ Uses Chart.js to visualize systolic and diastolic blood pressure readings over t
 
 Retrieves patient information from a REST API and binds the response data to Angular components.
 
-## Screenshots
-
-Add screenshots of your completed dashboard here.
-
-For example, create a `screenshots` directory in the repository and save an image as `dashboard.png`.
-
-```markdown
-![Healthcare Patient Dashboard](screenshots/dashboard.png)
-```
-
 ## Learning Outcomes
 
 This project demonstrates practical experience with:
@@ -154,10 +144,6 @@ This project demonstrates practical experience with:
 - Improve accessibility and responsive behavior.
 - Add a secure backend proxy if private API credentials are required.
 - Configure continuous integration for automated builds.
-
-## Disclaimer
-
-This project is a frontend development demonstration using patient dashboard data. It is not intended for clinical use and does not represent a production-ready healthcare system.
 
 ## Author
 
