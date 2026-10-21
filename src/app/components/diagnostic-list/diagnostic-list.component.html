@@ -1,0 +1,19 @@
+<div class="diagnosis">
+    <h2>Diagnostic List</h2>
+    <div class="diagnosis-list">
+        <div class="diagnosis-header">
+            <div>Problem/Diagnosis</div>
+            <div>Description</div>
+            <div>Status</div>
+        </div>
+        <div class="diagnosis-body">
+            @for (problem of patient?.diagnostic_list; track patient?.name) {
+                <div class="diagnosis-row">
+                    <div class="name">{{ problem.name }}</div>
+                    <div class="description">{{ problem.description }}</div>
+                    <div class="status">{{ problem.status }}</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

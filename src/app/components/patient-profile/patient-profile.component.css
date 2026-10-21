@@ -1,0 +1,57 @@
+.patient-profile {
+    background: #fff;
+    padding: 15px;
+    border-radius: 16px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    padding: 12px;
+}
+
+.image img {
+    width: 200px;
+    height: 200px;
+}
+
+.image h3 {
+    text-align: center;
+    margin: 12px 0;
+}
+
+.data {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 12px;
+}
+
+.icon {
+    width: 42px;
+    height: 42px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F6F7F8;
+    border-radius: 50%;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--activestate_bg_1);
+    width: 220px;
+    height: 41px;
+    border-radius: 41px;
+    margin-top: 20px;
+    font-size: var(--unnamed-font-size-14);
+    font-weight: bold;
+}

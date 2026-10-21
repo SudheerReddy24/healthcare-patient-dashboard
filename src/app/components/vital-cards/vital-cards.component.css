@@ -1,0 +1,62 @@
+.vital-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.vital-card {
+    height: 242px;
+    min-height: 180px;
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.icon {
+    display: block;          
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    margin-bottom: 12px;
+}
+
+.icon svg {
+    display: block;     
+    width: 96px;
+    height: 96px;
+}
+
+.respiratory-rate {
+    background: #E0F3FA;
+}
+
+.temperature {
+    background: #FFE6E9;
+}
+
+.heart-rate {
+    background: #FFE6F1;
+}
+
+.vital-title {
+    font-size: 14px;
+    color: #072635;
+    margin-bottom: 3px;
+}
+
+.vital-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: #072635;
+}
+
+.vital-level {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #072635;
+}
